@@ -1,0 +1,35 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE files
+.vscode/
+*.idea/
+
+# Compiled python modules
+*.pyd
+*.so
+
+# Dependency directories
+venv/
+env/
+env*/
+bin/
+lib/
+scripts/WinLibs/OpenMVG
+scripts/WinLibs/OpenMVS
+
+# Logs and data files
+*.log
+*.csv
+*.json
+*.pkl
+
+# Other
+.DS_Store
