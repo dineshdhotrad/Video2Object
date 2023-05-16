@@ -14,7 +14,7 @@ def create_object(path_to_video, output_path, fps, preset):
     focal = str(int(max(vheight,vwidth) * 1.2))
     
     try:
-        success = objectmesh(dir_path, frames_path, focal, preset)
+        success = objectmesh(output_path, frames_path, focal, preset)
     except:
         raise
     

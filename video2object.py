@@ -14,13 +14,13 @@ def main(args):
 
 if __name__=="__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input', '-i', type=str, required=False, default="data/example_video.mp4", 
+    parser.add_argument('--input', '-i', type=str, required=False, default="data/example.MOV", 
                         help='Path to input video file')
     parser.add_argument('--output', '-o', type=str, required=False, default="data/example_video_out", 
                         help='Path to output')
     parser.add_argument('--preset', '-p', type=str, required=False, default="NORMAL", 
                         help='Quality Preset 1] NORMAL 2] HIGH 3] ULTRA')
-    parser.add_argument('--fps', '-f', type=int, required=False, default="15", 
+    parser.add_argument('--fps', '-f', type=int, required=False, default="20", 
                         help='Number of frames to be extracted from the video per second')
     args = parser.parse_args()
     

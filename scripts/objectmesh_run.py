@@ -61,7 +61,7 @@ def objectmesh(object_dir, frames_dir, focal, preset):
     print("Compute matches")
     print(os.path.join(OPENMVG_BIN, "openMVG_main_ComputeMatches"),  "-i", matches_dir+"/sfm_data.json", "-p", matches_dir+"/pairs.bin", "-o", matches_dir)
     try:
-        pMatches = subprocess.Popen( [os.path.join(OPENMVG_BIN, "openMVG_main_ComputeMatches"),  "-i", matches_dir+"/sfm_data.json", "-p", matches_dir+"/pairs.bin","-o", matches_dir+"\matches.putative.bin", "-n", "AUTO"] )
+        pMatches = subprocess.Popen( [os.path.join(OPENMVG_BIN, "openMVG_main_ComputeMatches"),  "-i", matches_dir+"/sfm_data.json", "-p", matches_dir+"/pairs.bin","-o", matches_dir+"\matches.putative.bin", "-n", "HNSWL2"] )
         pMatches.wait()
         if pMatches.returncode != 0:
             raise NameError("Mesh")
@@ -71,12 +71,12 @@ def objectmesh(object_dir, frames_dir, focal, preset):
     
     print("Filter matches")
     try:
-        pMatches = subprocess.Popen( [os.path.join(OPENMVG_BIN, "openMVG_main_GeometricFilter"),  "-i", matches_dir+"/sfm_data.json", "-m", matches_dir+"/matches.putative.bin", "-o", matches_dir+"/matches.f.bin", "-n"] )
+        pMatches = subprocess.Popen( [os.path.join(OPENMVG_BIN, "openMVG_main_GeometricFilter"),  "-i", matches_dir+"/sfm_data.json", "-m", matches_dir+"/matches.putative.bin", "-o", matches_dir+"/matches.f.bin"] )
         pMatches.wait()
         if pMatches.returncode != 0:
             raise NameError("Mesh")
     except:
-        print("Error Compute Matches")
+        print("Error Filter matches")
         raise
 
     print("Performing Sequential/Incremental reconstruction")
