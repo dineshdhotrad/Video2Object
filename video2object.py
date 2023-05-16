@@ -20,7 +20,7 @@ if __name__=="__main__":
                         help='Path to output')
     parser.add_argument('--preset', '-p', type=str, required=False, default="NORMAL", 
                         help='Quality Preset 1] NORMAL 2] HIGH 3] ULTRA')
-    parser.add_argument('--fps', '-f', type=int, required=False, default="20", 
+    parser.add_argument('--fps', '-f', type=int, required=False, default="15", 
                         help='Number of frames to be extracted from the video per second')
     args = parser.parse_args()
     

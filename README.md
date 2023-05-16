@@ -34,13 +34,20 @@ Install the Python requiremts
    pip install -r requirements.txt
 ```
 
+### Alternative, Use of Docker
+```bash
+  docker build -t video2object .
+  docker run -v data/:/datasets --rm -it --gpus all video2object
+  cd video2object
+  python video2object -i /data/example.MOV -o /data/example_out -f 20 -P HIGH
+```
     
 ## Usage
 
 The repository contains Python scripts for each of the implemented algorithms. To convert a video to a 3D object using a specific algorithm, simply run the corresponding script. The output 3D object file will be saved in the same directory as the input video file.
 
 ```bash
-  python video2object.py -i data/example.MOV -p HIGH
+  python video2object.py -i data/example.MOV -p HIGH -f 20
 ```
 ## Example
 
